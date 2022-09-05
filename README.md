@@ -12,3 +12,5 @@ dispatch
 -redux는 reducer를 각자 가지고있음  
 3.action호출  
 -vue가 이부분은 더 쉽게 이해 된다  
+redux 툴킷 없이 했다 진짜 개고생 했다  
+
