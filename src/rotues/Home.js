@@ -7,7 +7,8 @@ function Home() {
     const state = useSelector((state) => state);
     function sub(event) {
         event.preventDefault();
-        console.log(state);
+        console.log(state.reducer);
+        console.log(state.reducer2);
     }
     function change(event) {
         setText(event.target.value);
