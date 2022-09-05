@@ -14,7 +14,7 @@ let reducer=(state = 0,action)=>{
 };
 let store=createStore(reducer);
 function change() {
-  console.log(store.getState());
+  num.innerHTML=store.getState();
 }
 store.subscribe(change);
 
