@@ -1,4 +1,5 @@
-let reducer = (arr = [], action) => {
+
+export default function  reducer  (arr = [], action)  {
     console.log('reducer');
     switch (action.type) {
         case "add":
@@ -14,4 +15,3 @@ let reducer = (arr = [], action) => {
 
 export const add = (obj) => ({ type: 'add', obj });
 
-export default reducer;
