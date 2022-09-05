@@ -1,17 +1,9 @@
-import { legacy_createStore as createStore } from "redux";
+import { legacy_createStore as createStore ,combineReducers} from "redux";
+import reducer from "./reducer/reducer";
+import reducer2 from "./reducer/reducer2";
+let rootReducer = combineReducers({reducer,reducer2});
 
-let reducer = (arr = [], action) => {
-    switch (action.type) {
-        case "add":
-            return [...arr, { text: action.vale, id: action.id }];
-        case "minus":
-            return arr.filter(todo => todo!==action.id);
-        default:
-            return arr;
-    }
-
-};
-let store = createStore(reducer);
+let store = createStore(rootReducer);
 
 
 export default store;
