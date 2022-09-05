@@ -1,3 +1,4 @@
+import { configureStore } from "@reduxjs/toolkit";
 import { legacy_createStore as createStore,combineReducers  } from "redux";
 import reducer from "./reducer/reducer";
 import reducer2 from "./reducer/reducer2";
@@ -6,7 +7,8 @@ const rootReducer = combineReducers({
     reducer,
     reducer2
 });
-let store = createStore(rootReducer);
+const store = configureStore({ reducer: rootReducer });
+
 
 
 export default store;
