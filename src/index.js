@@ -2,6 +2,8 @@ import { legacy_createStore as createStore } from "redux";
 let plus=document.querySelector('#plus');
 let num=document.querySelector('#num');
 let minus=document.querySelector('#minus');
+
+
 let reducer=(state = 0,action)=>{
   if(action.type==='add'){
     state+=1;
@@ -11,8 +13,10 @@ let reducer=(state = 0,action)=>{
   return state;
 };
 let store=createStore(reducer);
+function change() {
+  console.log(store.getState());
+}
+store.subscribe(change);
 
-store.dispatch({type:'add'});
-console.log(store.getState());
-store.dispatch({type:'minus'});
-console.log(store.getState());
+plus.addEventListener("click",()=>store.dispatch({type:'add'}));
+minus.addEventListener("click",()=>store.dispatch({type:'minus'}));
