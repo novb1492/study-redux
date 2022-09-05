@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSelector,useDispatch } from "react-redux";
-import {add} from "../reducer/reducer";
 import {add2}  from "../reducer/reducer2";
+import List from "./List";
 
 function Home() {
     let [text, setText] = useState("");
@@ -9,7 +9,7 @@ function Home() {
     const dispatch = useDispatch();
     function sub(event) {
         event.preventDefault();
-        dispatch(add({value:'dsd',id:'123'}))
+        console.log(state);
         dispatch(add2({value:'fff',id:'567'}))
     }
     function change(event) {
@@ -23,8 +23,9 @@ function Home() {
                 <button >저장</button>
             </form>
             <ul>
-                {JSON.stringify(state.reducer)}
-                {JSON.stringify(state.reduce2)}
+                {state.reducer2.map(state=>{
+                    <List obj={state} key={state.id}/>
+                })}
             </ul>
         </div>
     );

@@ -1,4 +1,5 @@
-let reducer2 = (arr = [{value:"hello",id:1}], action) => {
+let reducer2 = (arr = [{text:"hello",id:1}], action) => {
+    console.log('reducer2');
     switch (action.type) {
         case "add":
             let obj=action.obj;

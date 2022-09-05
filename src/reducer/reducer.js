@@ -1,4 +1,5 @@
 let reducer = (arr = [], action) => {
+    console.log('reducer');
     switch (action.type) {
         case "add":
             let obj=action.obj;
