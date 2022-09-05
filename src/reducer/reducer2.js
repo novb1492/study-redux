@@ -1,7 +1,8 @@
-let reducer2 = (arr = ["hello"], action) => {
+let reducer2 = (arr = [{value:"hello",id:1}], action) => {
     switch (action.type) {
         case "add":
-            return [...arr, { text: action.vale, id: action.id }];
+            let obj=action.obj;
+            return [...arr, { text: obj.value, id: obj.id }];
         case "minus":
             return arr.filter(todo => todo!==action.id);
         default:
@@ -9,4 +10,6 @@ let reducer2 = (arr = ["hello"], action) => {
     }
 
 };
+
+export const add2 = (obj) => ({ type: 'add', obj });
 export default reducer2;
