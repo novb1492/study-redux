@@ -1,9 +1,19 @@
-import { legacy_createStore as createStore ,combineReducers} from "redux";
-import reducer from "./reducer/reducer";
-import reducer2 from "./reducer/reducer2";
-let rootReducer = combineReducers({reducer,reducer2});
+import { legacy_createStore as createStore } from "redux";
+let weight=0;
 
-let store = createStore(rootReducer);
+function reducer(state=weight,action) {
+    if(action.type==='plus'){
+        state++;
+        return state;
+    }else if(action.type==='minus'){
+        state--;
+        return state;
+    }else{
+        return state;
+    }
+}
+
+let store = createStore(reducer);
 
 
 export default store;
