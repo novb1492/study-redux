@@ -11,7 +11,7 @@ const reducerSlice=createSlice({
             state.weight=state.weight+action.payload.value;
         },
         minus(state,action){
-            state.weight=state.weight-action.value;
+            state.weight=state.weight-action.payload.value;
         }
     }
 })
