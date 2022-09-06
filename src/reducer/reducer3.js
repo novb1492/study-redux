@@ -3,8 +3,8 @@ let init={
     weight:0,
 }
 
-export default function reducer2(state=init,action) {
-    console.log('b');
+export default function reducer3(state=init,action) {
+    console.log('c');
     if(action.type==='plus'){
         console.log(action);
         return state.weight+action.value;
